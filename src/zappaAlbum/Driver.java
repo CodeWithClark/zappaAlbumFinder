@@ -6,9 +6,9 @@ import java.util.Scanner;
 
 public class Driver {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         
-		// Welcome user to app
+	    // Welcome user to app
 		System.out.println("*****************************************************\n");
 		System.out.println("        Welcome to EAT THAT ALBUM!\n (the Frank Zappa Album search enigne)");
 		System.out.println("\n\nPlease select one of the following: ");
@@ -22,8 +22,8 @@ public class Driver {
 		// Loop through selection menu
 		while(!userInput.equalsIgnoreCase("q")) {
 			
-			if(userInput.contains("1")) {
-				albumToSong(scnr);
+		    if(userInput.contains("1")) {
+			    albumToSong(scnr);
 				userInput = scnr.nextLine();
 			}
 			
@@ -44,38 +44,40 @@ public class Driver {
 	     		selectionMenu(); // Display selection menu again
 	     		userInput = scnr.nextLine(); // Prompt user to input again
 	     	}
-	     }
+		}
 	     
 		// Allow user to quit program
-	     if (userInput.equalsIgnoreCase("q")) {
-	    	 System.out.println("\n\n===========");
-	    	 System.out.println("\nGood bye.");
-	    	 System.out.println("\n===========");
-	    	 scnr.close();
-	    	 System.exit(0);
+        if (userInput.equalsIgnoreCase("q")) {
+	        System.out.println("\n\n===========");
+	    	System.out.println("\nGood bye.");
+	    	System.out.println("\n===========");
+	    	scnr.close();
+	    	System.exit(0);
 	    }
 	}
 		    
-	// Create Album objects
-	    // Create an Array List for trackList parameter
-	    public static List<String> songs = new ArrayList<String>(List.of("Don't Eat the Yellow Snow", "Nanook Rubs It", 
+	/* 
+	 * Create Album objects
+	 * Create an Array List for trackList parameter
+	 */
+    public static List<String> songs = new ArrayList<String>(List.of("Don't Eat the Yellow Snow", "Nanook Rubs It", 
 	    		"St. Alphonzo's Pankcake Breakfast", "Father O'Blivion", 
 	    		"Cosmik Debris", "Excentrifugal Force", "Apostrophe", 
 	    		"Uncle Remus", "Stink-Foot"));
 	    
-	    // Create album
-		static Album album1 = new Album("Apostrophe", "1974", songs);
+	// Create album
+    static Album album1 = new Album("Apostrophe", "1974", songs);
 		
-		public static List<String> songs2 = new ArrayList<String>(List.of("The Central Scrutinizer", "Joe's Garage", 
+    public static List<String> songs2 = new ArrayList<String>(List.of("The Central Scrutinizer", "Joe's Garage", 
 	    		"Catholic Girls", "Crew Slut", 
 	    		"Wet T-Shirt Nite", "Toad-O Line", "Why Does It Hurt When I Pee?", "Lucille Has Messed My Mind Up",
 	    		"A Token of My Extreme", "Stick It Out", "Sy Borg", "Dong Work for Yuda", "Keep It Greasey",
 	    		"Outside Now", "He Used to Cut the Grass", "Packard Goose", "Watermelon in Easter Hay", 
 	    		"A Little Green Rosetta"));
 	    
-		static Album album2 = new Album("Joe's Garage", "1979", songs2);
+    static Album album2 = new Album("Joe's Garage", "1979", songs2);
 		
-		// static ArrayList<Object> allAlbums = new ArrayList<>(List.of(album1, album2));
+    //static ArrayList<Object> allAlbums = new ArrayList<>(List.of(album1, album2));
 		
 		/*
 		 * TODO:
@@ -94,6 +96,7 @@ public class Driver {
 		 *         - I want to prevent having to update each function every time an album is added.
 		 */
 	
+    
 	// Menu method to select type of search
     public static void selectionMenu() {
     	System.out.println();
@@ -104,14 +107,9 @@ public class Driver {
 	}
     
     
-    /* Implementing suggestion from Chat GPT:
-     *     boolean result = Album.checkInput();
-     */
-  
-    
     // Method for Menu Selection 1
     public static void albumToSong(Scanner scanner) {
-    	// Prompt user
+        // Prompt user
         System.out.println("\nEnter an album: ");
         // Get user input
         String userAlbum = scanner.nextLine();
@@ -121,11 +119,11 @@ public class Driver {
 		 *     If user input is in the object parameter
 		 *     print the track list parameter.
 		 */
-		if (album1.getTitle().contains(userAlbum.toUpperCase())) {
+		if (album1.getTitle().toUpperCase().contains(userAlbum.toUpperCase())) {
 			System.out.println("\n" + album1.getTitle() + ": \n" + 
 		                       String.join("\n", album1.getTrackList()));
 			
-		} else if (album2.getTitle().contains(userAlbum.toUpperCase()))
+		} else if (album2.getTitle().toUpperCase().contains(userAlbum.toUpperCase()))
 			System.out.println("\n" + album2.getTitle() + ": \n" + 
                     String.join("\n", album2.getTrackList()));
 		
@@ -152,10 +150,10 @@ public class Driver {
 		 */
 		
 		if (songs.contains(userSong)) {
-			System.out.println("\n" + userSong + "is on the " + album1.getTitle() + " album, released in " + album1.getYear() + ".");
+			System.out.println("\n" + userSong + " is on the " + album1.getTitle() + " album, released in " + album1.getYear() + ".");
 			
 		} else if (songs2.contains(userSong))
-			System.out.println("\n" + userSong + "is on the " + album2.getTitle() + " album, released in " + album2.getYear() + ".");
+			System.out.println("\n" + userSong + " is on the " + album2.getTitle() + " album, released in " + album2.getYear() + ".");
 		
 		// Input validation
 		else
@@ -190,5 +188,5 @@ public class Driver {
 		
 		// Return user to menu
 		selectionMenu();
-		}
+	}
 }
