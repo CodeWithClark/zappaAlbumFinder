@@ -1,3 +1,12 @@
+/**
+ * A program to search through Frank Zappa's catalog.
+ * 
+ * Author: Jordan Clark
+ * Email: CodeWithClark@gmail.com
+ * Web site: CodeWithClark.com
+ * Date Modified: 22DEC23
+ */
+
 package zappaAlbum;
 
 import java.util.ArrayList;
