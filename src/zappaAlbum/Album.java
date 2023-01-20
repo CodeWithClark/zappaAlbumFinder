@@ -32,7 +32,6 @@ public class Album {
 	
 	// Method to unify format for displaying album information.
 	void displayAlbumInformation() {
-		System.out.println();
         System.out.println("Album: " + title + " (" + year + ")");
         //System.out.println("Year:  " + year);
         System.out.println("Songs:");
@@ -43,13 +42,12 @@ public class Album {
 		for (int i = 0; i < trackList.size(); i++) {
 			System.out.println("       " + (i+1) + ". " + trackList.get(i));
 		}
-		System.out.println();
 	}
 	
 	void displayTrack(String searchInput) {
 		int index = trackList.indexOf(searchInput);
 	    if (index != -1) {
-	        System.out.println("\n" + searchInput + " is track number " + (index + 1) + " on the " + title + " album released in " + year);
+	        System.out.println("\n" + searchInput + " is track number " + (index + 1) + " on the " + title + " album released in " + year + ".");
 	    } else {
 	        System.out.println("Track not found on album " + title);
 	    }

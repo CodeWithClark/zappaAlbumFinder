@@ -32,7 +32,7 @@ public class SearchAlbums {
 		// Create new album objects
 		Album album1 = new Album("Apostrophe", "1974", songs1);
 		Album album2 = new Album("Joe's Garage", "1979",songs2);
-		Album album3 = new Album("Album3", "2023", songs3);
+		Album album3 = new Album("Album3", "1974", songs3);
 		
 		// Add albums to allAlbums array list
 		allAlbums.add(album1);
@@ -64,14 +64,15 @@ public class SearchAlbums {
         //        Print specific information
         for(Album album: allAlbums) {        	
         	if (album.getTitle().toUpperCase().contains(searchInput)) {
-        		System.out.println("\nThe album "+ album.getTitle() + " is listed below:\n");
+        		System.out.println();
+        		System.out.println("\nThe album information for "+ album.getTitle() + " is listed below:\n");
         		album.displayAlbumInformation();
         		
         	}
         	else if (album.getYear().contains(searchInput)) {
-        		System.out.println("\nThe albums released in the year " + album.getYear() + " are listed below:");
-        		System.out.println("\n" + album.getTitle());
-        		
+        		System.out.println("\nThe albums released in " + searchInput + " are listed below:\n");
+        		albumsInYear(searchInput);
+        		break;
         	}
         	else if (searchSongs(searchInput, album)) {
         		//System.out.println("\n Test Print");
@@ -96,4 +97,12 @@ public class SearchAlbums {
 		return false;
 	}
 
+	static void albumsInYear(String searchInput) {
+		for(Album album: allAlbums) {
+		    if(album.getYear().contains(searchInput)) {
+		        System.out.println(" - " + album.getTitle());
+			}
+		}
+	}
 }
+
