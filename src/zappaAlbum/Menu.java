@@ -88,7 +88,5 @@ public class Menu {
 		} else
 			System.out.println("PLEASE ENTER 'Y' OR 'N'.\n");
 			keepSearching();
-
 		}
-
 }

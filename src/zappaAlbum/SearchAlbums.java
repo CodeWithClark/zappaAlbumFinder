@@ -66,8 +66,7 @@ public class SearchAlbums {
         	if (album.getTitle().toUpperCase().contains(searchInput)) {
         		System.out.println();
         		System.out.println("\nThe album information for "+ album.getTitle() + " is listed below:\n");
-        		album.displayAlbumInformation();
-        		
+        		album.displayAlbumInformation();		
         	}
         	else if (album.getYear().contains(searchInput)) {
         		System.out.println("\nThe albums released in " + searchInput + " are listed below:\n");
@@ -75,17 +74,14 @@ public class SearchAlbums {
         		break;
         	}
         	else if (searchSongs(searchInput, album)) {
-        		//System.out.println("\n Test Print");
         		album.displayTrack(searchInput);
         	}
         }
-        
-        Menu.keepSearching(); 
-        
+        Menu.keepSearching();  
     }
 	
+	// Method to search user input through track lists
 	private static boolean searchSongs(String searchInput, Album album) {
-		
 		List<String> albumTrackList = album.getTrackList();
 		
 		for(String albumTrack: albumTrackList) {
@@ -93,11 +89,11 @@ public class SearchAlbums {
 				return true;
 			}
 		}
-		
 		return false;
 	}
 
-	static void albumsInYear(String searchInput) {
+	// Method to find albums released in the same year
+	private static void albumsInYear(String searchInput) {
 		for(Album album: allAlbums) {
 		    if(album.getYear().contains(searchInput)) {
 		        System.out.println(" - " + album.getTitle());
