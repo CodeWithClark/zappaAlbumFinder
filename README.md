@@ -1,31 +1,53 @@
-# Frank Zappa Search Engine (Java project)
+# Frank Zappa - CLI Search (Written in Java)
 
-## Search for an album, a track list, or release year.
+## Search Frank Zappa's music catalog for an album, a track, or a release year.
 
-This project is a search engine for Frank Zappa's music catalog and showcases my ability to use object-oriented programming to write a functional program from scratch. 
-It contains:
-* Driver Class - Runs program
-* Menu Class - Welcome display; menu selection; keep searching option
-* Album Class -  Album constructor; print all format
-* SearchAlbums Class - Album objects; track lists; loops to check user input against internal data
+This project allows you to search Frank Zappa's music catalog from the command line. It showcases my ability to use object-oriented programming to write a functional Java program from scratch. 
 
-## How To Run Program In Terminal / Command Prompt
-### Install Java
-* In terminal or command prompt copy & paste “java -version” to see which version you have
-* Visit https://www.java.com/en/download/help/download_options.html for more info
+* Driver Class - Initializes program
+* Menu Class - Welcome message, menu options
+* Album Class -  Album constructor, print all tracks
+* SearchAlbums Class - Initialize album objects & track lists, searches using user input
 
-### In Github
-* Locate the green “< > Code” button and select DOWNLOAD ZIP
+## How To Run (Terminal / Command Prompt)
 
-### In terminal
-* Locate file: zappaAlbumFinder-master
-* Go to: src
-* copy & paste: "javac -cp . zappaAlbum/*.java"
-* copy & paste: "java -cp . zappaAlbum/Driver"
+### 1. Install Java
 
-## Recommended Use:
-There are only 3 album objects created in order to test the program. Once you have opened the program successfully, please do the following:
-* Select “[2] View all albums” to find the attached albums, track lists and release date. 
-* Afterwards, select “y” to keep searching
-* Select “[1] Search album, song, or release year” then copy and paste desired search
-* Select “[3] To exit program” if in selection menu, or “n” when asked to “Keep searching?” to close program.
+Make sure you have Java installed:
+
+```
+java -version
+```
+
+* Visit https://www.java.com/en/download/help/download_options.html for more info.
+
+### 2. Clone this repository
+
+```
+git clone https://github.com/CodeWithClark/zappaAlbumFinder.git
+```
+
+Or:
+
+Locate the green **`< > Code`** button and select DOWNLOAD ZIP
+
+### 3. Compile program
+
+```
+cd zappaAlbumFinder
+cd src
+javac -cp . zappaAlbum/*.java
+java -cp . zappaAlbum/Driver
+```
+
+## Notes
+
+There are currently only 3 Zappa albums available in this project.
+
+I would suggest using this program like this:
+
+1. Select **[2] View all albums** to find the attached albums, track lists, and release dates
+2. Pick one you'd like to search for
+3. Select **y** to keep searching
+4. Select **[1] Search album, song, or release year** then type your chosen search
+5. To exit the program, type **3** if on the main menu or **n** if asked to **Keep searching?**
